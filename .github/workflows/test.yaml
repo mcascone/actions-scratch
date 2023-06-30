@@ -1,0 +1,15 @@
+name: Deploy
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  output-test:
+    runs-on: ubuntu-latest
+    steps:
+    - id: 'summarytest'
+      name: 'summary test'
+      run: |
+        echo 'hi'
