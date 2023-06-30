@@ -15,7 +15,8 @@ jobs:
       run: |
         echo "my-env-var='i love bitovi'" >> $GITHUB_OUTPUT
         cat $GITHUB_OUTPUT
-        echo $my-env-var
+        echo "$my-env-var"
+        echo "now i get it" >> $GITHUB_STEP_SUMMARY
 
     - id: 'summarytest2'
       name: 'summary test 2'
@@ -23,3 +24,6 @@ jobs:
       run: |
         cat $GITHUB_OUTPUT
         echo $my-env-var
+        echo ${{ steps.summarytest.outputs.my-env-var}}
+        echo ${{ steps.summarytest.outputs['my-env-var']}}
+        echo ${{ steps.summarytest.outputs['my-env-var2']}}
