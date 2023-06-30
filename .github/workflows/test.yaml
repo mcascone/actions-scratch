@@ -15,6 +15,7 @@ jobs:
       run: |
         echo "my-env-var='i love bitovi'" >> $GITHUB_OUTPUT
         cat $GITHUB_OUTPUT
+        echo $my-env-var
 
     - id: 'summarytest2'
       name: 'summary test 2'
