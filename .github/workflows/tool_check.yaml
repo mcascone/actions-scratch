@@ -1,0 +1,16 @@
+name: Tool Check
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  Tool-Check:
+    runs-on: ubuntu-latest
+    steps:
+    - id: toolcheck
+      name: Tool Check
+      run: |
+        echo ::group::Tool Check
+        echo "checking BATS"
+        bats -v
