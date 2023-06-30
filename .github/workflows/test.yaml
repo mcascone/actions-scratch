@@ -1,4 +1,4 @@
-name: Deploy
+name: Github Output Test
 
 on: push
 
@@ -11,5 +11,9 @@ jobs:
     steps:
     - id: 'summarytest'
       name: 'summary test'
+      shell: bash
       run: |
-        echo 'hi'
+        echo $GITHUB_OUTPUT
+        printf "hi\n" >> $GITHUB_WORKSPACE/test.txt
+        cat $GITHUB_WORKSPACE/test.txt
+        cat $GITHUB_WORKSPACE/test.txt >> $GITHUB_OUTPUT
